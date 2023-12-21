@@ -1,0 +1,17 @@
+@import "./variables";
+@import "./componentStyle/navbar.scss";
+@import "./componentStyle/convertidor/convertidor.scss";
+@import "./componentStyle/footer";
+
+
+body {
+  background-color: $colorBody;
+  margin: 0;
+}
+
+h2,
+h3,
+p,
+a {
+  font-family: $fuenteTextos;
+}

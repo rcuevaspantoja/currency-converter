@@ -1,0 +1,71 @@
+@import "./moneda.scss";
+@import "./resultado.scss";
+@import "../tipoSalida/tiposalida.scss";
+
+.convertidorBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.convertidor {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 100vw;
+  max-width: 700px;
+  background-color: $colorDivConvertidor;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+label,
+h2 {
+  text-align: center;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.btn {
+  background-color: $colorBoton;
+  color: white;
+  width: 50px;
+  height: 40px;
+  margin: 10px;
+}
+
+.seleccionarMoneda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+}
+
+.ingresarCantidad {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 640px) {
+  .convertidor {
+    height: 500px;
+  }
+
+  .seleccionarMoneda {
+    justify-content: space-between;
+  }
+
+  label {
+    text-align: start;
+  }
+
+  .btn {
+    margin: 0;
+  }
+}
