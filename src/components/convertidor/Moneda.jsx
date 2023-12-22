@@ -1,7 +1,16 @@
 import React from "react";
 
 export default function Moneda(props) {
-  const { datos, valorID, valorBase, cargando, cambiarMoneda, titulo } = props;
+  const {
+    valorID,
+    datosObj,
+    valor,
+    cargando,
+    cambiarMoneda,
+    titulo,
+  } = props;
+
+  const listaMonedas = Object.entries(datosObj);
 
   return (
     <div className="moneda">
@@ -9,14 +18,14 @@ export default function Moneda(props) {
       <select
         id={valorID}
         className="form-select"
-        value={valorBase}
+        value={valor}
         onChange={cambiarMoneda}
       >
         {cargando && <option>Loading...</option>}
-        {datos &&
-          datos.map((moneda) => (
-            <option value={moneda} key={moneda}>
-              {moneda}
+        {datosObj &&
+          listaMonedas.map((moneda) => (
+            <option value={moneda[0]} key={moneda[1].symbol}>
+              {moneda[0]} ({moneda[1].symbol})
             </option>
           ))}
       </select>

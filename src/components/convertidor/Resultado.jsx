@@ -6,7 +6,7 @@ function Resultado(props) {
   const { titulo, monedaDesde, monedaPara, cantidad } = props;
 
   const [formatoSalida, setFormatoSalida] = useState("Truncate");
-  const { valorRespuesta, cargando } = FuncionCalcular(
+  const { valorRespuesta, cargando, textoSalida } = FuncionCalcular(
     monedaDesde,
     monedaPara,
     cantidad,
@@ -21,7 +21,7 @@ function Resultado(props) {
       </div>
       <div className="resultado">
         <p className="resultadoExplicado">
-          {monedaDesde} TO {monedaPara} ({formatoSalida})
+          {monedaDesde} TO {monedaPara} ({textoSalida})
         </p>
 
         {cargando && (

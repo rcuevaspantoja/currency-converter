@@ -1,4 +1,3 @@
-
 import { useSeleccionMoneda } from "../hooks/useSeleccionMoneda";
 useSeleccionMoneda;
 
@@ -9,9 +8,10 @@ export function FuncionCalcular(
   formatoSalida
 ) {
   let valorRespuesta = null;
-let valorTotal
+  let valorTotal = 0;
+  let textoSalida = ""
   const { datosObj, cargando } = useSeleccionMoneda(
-    `&currencies=${monedaPara}&base_currency=${monedaDesde}`
+    `&currencies=${monedaPara}&base_currency=${monedaDesde}`, "latest"
   );
 
   {
@@ -19,19 +19,18 @@ let valorTotal
   }
 
   if (formatoSalida == "Roundout") {
-    valorRespuesta = Math.round(valorTotal);
-    console.log(valorRespuesta);
-    return {valorRespuesta, cargando};
+    valorRespuesta = Math.round(valorTotal * 100) / 100;
+    textoSalida = "Roundout"
+    return { valorRespuesta, cargando, textoSalida };
   }
   if (formatoSalida == "Truncate") {
     valorRespuesta = Math.trunc(valorTotal);
-    console.log(valorRespuesta);
-    return {valorRespuesta, cargando};
+    textoSalida = "Truncated"
+    return { valorRespuesta, cargando, textoSalida };
   }
   if (formatoSalida == "Exact") {
     valorRespuesta = valorTotal;
-    console.log(valorRespuesta);
-    return {valorRespuesta, cargando};
+    textoSalida = "Exact"
+    return { valorRespuesta, cargando, textoSalida };
   }
-
 }

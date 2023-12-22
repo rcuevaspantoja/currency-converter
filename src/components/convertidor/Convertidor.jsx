@@ -10,7 +10,10 @@ function Convertidor() {
   const [monedaPara, setMonedaPara] = useState("USD");
   const [cantidad, setCantidad] = useState(0);
 
-  const { cargando, datos, error } = useSeleccionMoneda("&currency");
+  const { cargando, error, datosObj } = useSeleccionMoneda(
+    "&currencies=",
+    "currencies"
+  );
 
   const funcionError = () => {
     alert(
@@ -36,9 +39,8 @@ function Convertidor() {
           <Moneda
             titulo={"FROM"}
             valorID={"monedaDesde"}
-            valorBase={monedaDesde}
-            datos={datos}
-            cargando={cargando}
+            datosObj={datosObj}
+            valor={monedaDesde}
             cambiarMoneda={(e) => setMonedaDesde(e.target.value)}
           />
 
@@ -49,9 +51,8 @@ function Convertidor() {
           <Moneda
             titulo={"TO"}
             valorID={"monedaPara"}
-            valorBase={monedaPara}
-            datos={datos}
-            cargando={cargando}
+            datosObj={datosObj}
+            valor={monedaPara}
             cambiarMoneda={(e) => setMonedaPara(e.target.value)}
           />
         </div>
@@ -59,7 +60,8 @@ function Convertidor() {
         <IngresarCantidad
           titulo={"AMOUNT"}
           monedaDesde={monedaDesde}
-          monedaPara={monedaPara}
+          cargando={cargando}
+          datosObj={datosObj}
           cambiarValor={(e) => setCantidad(e.target.value)}
         />
 
