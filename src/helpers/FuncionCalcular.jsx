@@ -7,20 +7,22 @@ export function FuncionCalcular(
   cantidad,
   formatoSalida
 ) {
-  let valorRespuesta = null;
+  let valorRespuesta = 0;
   let valorTotal = 0;
   let textoSalida = ""
+
   const { datosObj, cargando } = useSeleccionMoneda(
-    `&currencies=${monedaPara}&base_currency=${monedaDesde}`, "latest"
+    `&currencies=${monedaPara.slice(0,3)}&base_currency=${monedaDesde.slice(0,3)}`, "latest"
+
   );
 
   {
-    datosObj && (valorTotal = cantidad * datosObj[monedaPara]);
+    datosObj && (valorTotal = cantidad * datosObj[monedaPara.slice(0,3)]);
   }
 
   if (formatoSalida == "Roundout") {
     valorRespuesta = Math.round(valorTotal * 100) / 100;
-    textoSalida = "Roundout"
+    textoSalida = "Rounded"
     return { valorRespuesta, cargando, textoSalida };
   }
   if (formatoSalida == "Truncate") {

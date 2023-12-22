@@ -12,15 +12,36 @@
   padding: 10px;
   width: 100%;
   height: 100%;
+
   > .resultadoExplicado {
-    font-weight: bold;
-    opacity: 0.4;
-    font-family: $fuentesResultado;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    justify-content: space-between;
+    > p {
+      font-weight: bold;
+      opacity: 0.4;
+      font-family: $fuentesResultado;
+    }
   }
 }
 
 .resultadoValor {
+  overflow: hidden;
+  text-wrap: wrap;
+  text-overflow: ellipsis;
   font-size: 35px;
+  color: $colorResultadoValor;
+  font-family: $fuentesResultado;
+  overflow-wrap: normal;
+  >p{
+    display: inline;
+    font-family: $fuentesResultado;
+  }
+}
+
+.spinner-border {
   color: $colorResultadoValor;
 }
 
@@ -28,4 +49,10 @@
   display: flex;
   width: 100%;
   align-items: flex-end;
+}
+
+.botonCopiar {
+  width: 100%;
+  margin-left: auto;
+  margin: 10px;
 }

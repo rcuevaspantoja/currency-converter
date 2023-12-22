@@ -8,6 +8,7 @@ export function useSeleccionMoneda(url, arg) {
   const urlBase = `https://api.freecurrencyapi.com/v1/${arg}?apikey=${
     import.meta.env.VITE_APIKEY
   }`;
+
   useEffect(() => {
     setCargando(true);
     fetch(urlBase + url)

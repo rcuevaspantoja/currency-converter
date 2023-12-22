@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSeleccionMoneda } from "../../hooks/useSeleccionMoneda";
+import React from "react";
+
 
 export default function IngresarCantidad(props) {
   const { titulo, monedaDesde, datosObj, cambiarValor} = props;
@@ -8,16 +8,20 @@ export default function IngresarCantidad(props) {
     <div className="ingresarCantidad">
       <label>{titulo}</label>
       <div className="input-group">
-        <span className="input-group-text" id="basic-addon1">
-          {datosObj && <span>{monedaDesde}</span>}
+        <span className="input-group-text">
+          {datosObj && <span>{monedaDesde.slice(3)}</span>}
         </span>
 
         <input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]+"
           className="form-control"
           placeholder="0.00"
           onChange={cambiarValor}
-        ></input>
+          maxLength="15"
+        >
+        </input>
       </div>
     </div>
   );

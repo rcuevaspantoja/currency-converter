@@ -1,14 +1,7 @@
 import React from "react";
 
 export default function Moneda(props) {
-  const {
-    valorID,
-    datosObj,
-    valor,
-    cargando,
-    cambiarMoneda,
-    titulo,
-  } = props;
+  const { valorID, datosObj, valor, cargando, cambiarMoneda, titulo } = props;
 
   const listaMonedas = Object.entries(datosObj);
 
@@ -24,7 +17,7 @@ export default function Moneda(props) {
         {cargando && <option>Loading...</option>}
         {datosObj &&
           listaMonedas.map((moneda) => (
-            <option value={moneda[0]} key={moneda[1].symbol}>
+            <option value={moneda[0] + moneda[1].symbol} key={moneda[0]}>
               {moneda[0]} ({moneda[1].symbol})
             </option>
           ))}

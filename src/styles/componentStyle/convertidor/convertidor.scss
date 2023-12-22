@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
+  margin: 10px 0 10px 0;
 }
 
 .convertidor {
@@ -28,14 +29,6 @@ h2 {
   opacity: 0.5;
 }
 
-.btn {
-  background-color: $colorBoton;
-  color: white;
-  width: 50px;
-  height: 40px;
-  margin: 10px;
-}
-
 .seleccionarMoneda {
   display: flex;
   flex-wrap: wrap;
@@ -50,9 +43,12 @@ h2 {
   flex-direction: column;
   width: 100%;
   padding: 10px;
+  > .input-group-text {
+    min-width: 20px;
+  }
 }
 
-.spinner-border{
+.spinner-border {
   font-size: 25px;
 }
 
@@ -71,9 +67,5 @@ label {
 
   label {
     text-align: start;
-  }
-
-  .btn {
-    margin: 0;
   }
 }

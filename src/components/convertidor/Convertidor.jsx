@@ -6,8 +6,8 @@ import Resultado from "./Resultado";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Convertidor() {
-  const [monedaDesde, setMonedaDesde] = useState("AUD");
-  const [monedaPara, setMonedaPara] = useState("USD");
+  const [monedaDesde, setMonedaDesde] = useState("USD$");
+  const [monedaPara, setMonedaPara] = useState("EUR€");
   const [cantidad, setCantidad] = useState(0);
 
   const { cargando, error, datosObj } = useSeleccionMoneda(
