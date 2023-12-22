@@ -13,13 +13,14 @@ export default function IngresarCantidad(props) {
         </span>
 
         <input
-          type="text"
+          type="number"
+          min={0}
           inputMode="numeric"
-          pattern="[0-9]+"
           className="form-control"
           placeholder="0.00"
           onChange={cambiarValor}
           maxLength="15"
+
         >
         </input>
       </div>

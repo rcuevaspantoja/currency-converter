@@ -143,9 +143,6 @@ h2 {
   width: 100%;
   padding: 10px;
 }
-.ingresarCantidad > .input-group-text {
-  min-width: 20px;
-}
 
 .spinner-border {
   font-size: 25px;

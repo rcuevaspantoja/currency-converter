@@ -14,7 +14,9 @@ export function useSeleccionMoneda(url, arg) {
     fetch(urlBase + url)
       .then((res) => res.json())
       .then((data) => setDatosObj(data.data))
-      .catch((err) => setError(err))
+      /* Descomentar la línea siguiente para testing sobre error. */
+      /* .then((data) => setError("error")) */
+      .catch(() => setError("error"))
       .finally(() => setCargando(false));
   }, [url]);
   return { cargando, error, datosObj };
