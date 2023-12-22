@@ -91,7 +91,7 @@ La aplicación es simple e intuitiva de usar, tiene 2 SelectBox los cuales permi
 
 <img src="assets/readme/../../src/assets/figmaPreview.png" alt="Logo" width="416" height="278">
 
-### Screenshots
+## Screenshots
 
 <img src="assets/readme/../../src/assets/screenShot_1.png" alt="Logo" width="1120">
 <img src="assets/readme/../../src/assets/screenShot_2.png" alt="Logo">
