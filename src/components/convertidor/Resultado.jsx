@@ -30,10 +30,6 @@ function Resultado(props) {
 
       idBotonCopiar.disabled = false;
     }
-
-    if(valorRespuesta == NaN){
-      idBotonCopiar.disabled = true;
-    }
   }
 
   return (
