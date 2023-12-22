@@ -15,6 +15,7 @@ function Resultado(props) {
   const idBotonCopiar = document.getElementById("btnCopiar");
   const idValorFinal = document.getElementById("valorFinal");
 
+
   function copiarTexto() {
     navigator.clipboard.writeText(valorRespuesta);
     alert("Copied to the clipboard.");
@@ -28,6 +29,10 @@ function Resultado(props) {
     if (valorRespuesta != 0) {
 
       idBotonCopiar.disabled = false;
+    }
+
+    if(valorRespuesta == NaN){
+      idBotonCopiar.disabled = true;
     }
   }
 

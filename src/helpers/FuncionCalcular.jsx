@@ -13,7 +13,6 @@ export function FuncionCalcular(
 
   const { datosObj, cargando } = useSeleccionMoneda(
     `&currencies=${monedaPara.slice(0,3)}&base_currency=${monedaDesde.slice(0,3)}`, "latest"
-
   );
 
   {
@@ -22,17 +21,22 @@ export function FuncionCalcular(
 
   if (formatoSalida == "Roundout") {
     valorRespuesta = Math.round(valorTotal * 100) / 100;
+    valorRespuesta = valorRespuesta.toString()
     textoSalida = "Rounded"
     return { valorRespuesta, cargando, textoSalida };
   }
   if (formatoSalida == "Truncate") {
     valorRespuesta = Math.trunc(valorTotal);
+    valorRespuesta = valorRespuesta.toString()
     textoSalida = "Truncated"
     return { valorRespuesta, cargando, textoSalida };
   }
   if (formatoSalida == "Exact") {
     valorRespuesta = valorTotal;
+    valorRespuesta = valorRespuesta.toString()
     textoSalida = "Exact"
     return { valorRespuesta, cargando, textoSalida };
   }
+
+
 }
