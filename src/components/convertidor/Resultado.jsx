@@ -3,7 +3,7 @@ import { FuncionCalcular } from "../../helpers/FuncionCalcular";
 import TipoSalida from "../tipoSalida/TipoSalida";
 
 function Resultado(props) {
-  const { titulo, monedaDesde, monedaPara, cantidad } = props;
+  const { titulo, monedaDesde, monedaPara, cantidad, error } = props;
   const [formatoSalida, setFormatoSalida] = useState("Truncate");
   const { valorRespuesta, cargando, textoSalida } = FuncionCalcular(
     monedaDesde,
@@ -61,7 +61,7 @@ function Resultado(props) {
         {!cargando && (
           <p id={"resultadoFinal"} className="resultadoValor">
             <span>{monedaPara.slice(3)} </span>
-            <span id="valorFinal">{valorRespuesta}</span>
+            <span id="valorFinal">{error == 1 ? "ERROR EN EL SERVIDOR." : valorRespuesta}</span>
           </p>
         )}
       </div>

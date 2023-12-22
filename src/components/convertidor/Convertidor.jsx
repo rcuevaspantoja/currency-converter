@@ -9,17 +9,14 @@ function Convertidor() {
   const [monedaDesde, setMonedaDesde] = useState("USD$");
   const [monedaPara, setMonedaPara] = useState("EUR€");
   const [cantidad, setCantidad] = useState(0);
-
+  let informeDeError = 0;
   const { cargando, error, datosObj } = useSeleccionMoneda(
     "&currencies=",
     "currencies"
   );
 
   const funcionError = () => {
-    alert(
-      "Ha ocurrido un error, ponerse en contacto con el desarrollador, link al final de la página."
-    );
-    console.log(error);
+    informeDeError = 1;
   };
 
   async function cambiarValores() {
@@ -70,6 +67,7 @@ function Convertidor() {
           monedaDesde={monedaDesde}
           monedaPara={monedaPara}
           cantidad={cantidad}
+          error ={informeDeError}
         />
       </div>
     </section>
