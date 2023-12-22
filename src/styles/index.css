@@ -22,9 +22,17 @@ h1 {
   width: 100%;
 }
 
+label {
+  width: 100%;
+  text-align: center;
+}
+
 @media only screen and (min-width: 640px) {
   .moneda {
     width: 30%;
+  }
+  label {
+    text-align: start;
   }
 }
 .resultadoBox {
@@ -120,6 +128,10 @@ h2 {
 
 .spinner-border {
   font-size: 25px;
+}
+
+label {
+  text-align: center;
 }
 
 @media only screen and (min-width: 640px) {
